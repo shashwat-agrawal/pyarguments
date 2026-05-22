@@ -124,11 +124,12 @@ class ArgumentParser(argparse.ArgumentParser):
         return ret_struct
 
 
-def get_argument_parser(prog_name = None, description = ''):
+def get_argument_parser(prog_name = None, description = '', **kwargs):
     if prog_name is None:
         raise ValueError('program name is required for instantiating argument parser instance')
     return ArgumentParser(
-        prog            = prog_name,
-        description     = description,
+        prog        = prog_name,
+        description = description,
+        **kwargs
     )
 
